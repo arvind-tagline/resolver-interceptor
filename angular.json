@@ -28,9 +28,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/ngx-spinner/animations/pacman.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [ "node_modules/bootstrap/dist/js/bootstrap.min.js"]
           },
           "configurations": {
             "production": {
@@ -103,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "bbbbfb99-c1df-4615-8ca9-507a9b7bf7e2"
   }
 }

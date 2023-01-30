@@ -1,0 +1,27 @@
+<h2 class="m-2">This page is without resolver</h2>
+<div class="table-responsive m-3" *ngIf="allExamList.length">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">Student Name</th>
+        <th scope="col" class="text-center">SubjectName</th>
+        <th scope="col" class="text-center">Email</th>
+        <th scope="col" class="text-center">Notes</th>
+        <th scope="col" style="width:8%" class="text-center">View Paper</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exam of allExamList | paginate: { itemsPerPage: count, currentPage: p }">
+        <!-- <td class="text-center">{{exam.studentName[0] | titlecase}} {{exam.studentName[1] | titlecase}}</td> -->
+        <td class="text-center">{{exam.studentName | titlecase}}</td>
+        <td class="text-center">{{exam.subjectName | titlecase}}</td>
+        <td class="text-center">{{exam.email}}</td>
+        <td class="text-center">{{exam.notes}}</td>
+        <td class="text-center"><a [routerLink]="['examPaper/'+exam._id]">View Paper</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

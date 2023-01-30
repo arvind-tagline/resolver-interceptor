@@ -1,0 +1,31 @@
+<!-- <div>
+    <h3> Total Student :-{{totalStudent}}</h3>
+</div> -->
+<h2 class="m-2">This page is with resolver</h2>
+
+<div class="table-responsive m-3" *ngIf="allStudentList.length">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col" class="custom-width">Status</th>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col" class="text-center custom-width">View Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of allStudentList | paginate: { itemsPerPage: count, currentPage: p }">
+        <td [ngClass]="{'table-success': data.status === 'Active','table-warning': data.status == 'Pending'}">
+          {{data.status}}</td>
+        <td>{{data._id}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.email}}</td>
+        <td class="text-center"><a [routerLink]="['viewDetail/'+data._id]">View Details</a> </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
