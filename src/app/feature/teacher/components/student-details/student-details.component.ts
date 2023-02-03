@@ -32,6 +32,10 @@ export class StudentDetailsComponent implements OnInit {
     this.getData();
   }
 
+  public confirm(): boolean {
+    return window.confirm('Are you sure you want to exit this student details page!');
+  }
+
   public getData() {
     if (this.studentData.statusCode == 200) {
       this._id = this.studentData.data[0]._id;

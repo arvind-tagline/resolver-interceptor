@@ -27,7 +27,7 @@ export class AllExamComponent implements OnInit {
 
 
   public getAllExam(){
-    this.spinner.show();
+    // this.spinner.show();
     this.studentService.getAllExam().subscribe({
       next:(res:AllExamDataResponse)=>{
         if(res.data){
@@ -44,7 +44,7 @@ export class AllExamComponent implements OnInit {
           })
         }
         // this.allExamList = res.data;
-        this.spinner.hide();
+        // this.spinner.hide();
       },
       error:(err:any)=>{
         console.log('err :>> ', err);

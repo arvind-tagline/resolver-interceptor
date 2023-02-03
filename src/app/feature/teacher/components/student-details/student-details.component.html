@@ -14,6 +14,7 @@
             <a class="btn btn-danger" routerLink="/teacher">Go Back</a>
             <button class="btn btn-success ms-2" (click)="result()" *ngIf="viewExam">Result</button>
             <button class="btn btn-warning ms-2" (click)="hideResult()" *ngIf="hideExam">Hide</button>
+            <button class="btn btn-warning ms-2" [routerLink]="['/teacher/viewDetail/'+_id + '/child']">Show Child</button>
           </div>
         </div>
       </div>
@@ -23,6 +24,9 @@
 
   <!-- Student Result start -->
   <div class="col-sm-8 table-responsive">
+    <!-- test canActivateChild start  -->
+  <router-outlet></router-outlet>
+  <!-- test canActivateChild end  -->
     <table class="table table-responsive table-hover table-secondary" *ngIf="resultTable">
       <thead>
         <tr class="text-center">
@@ -77,3 +81,5 @@
   </div>
 </div>
   <!-- Answer sheet Modal end -->
+
+ 

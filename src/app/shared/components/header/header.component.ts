@@ -11,6 +11,7 @@ import { SharedService } from '../../service/shared.service';
 export class HeaderComponent implements OnInit {
 
   public isLogin$ = this.sharedService.isAuthenticated$;
+  public userName!:string | null;
 
   constructor(
     private router: Router,
@@ -21,7 +22,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     if (localStorage.getItem('token')) {
       this.sharedService.isAuthenticated$.next(true);
+      this.userName = localStorage.getItem('userName') || null;
     }
+
   }
 
   public logOut() {

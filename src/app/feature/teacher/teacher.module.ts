@@ -6,13 +6,15 @@ import { AllStudentsComponent } from './components/all-students/all-students.com
 import { ViewExamComponent } from './components/view-exam/view-exam.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
+import { ChildComponentComponent } from './components/child-component/child-component.component';
 
 
 @NgModule({
   declarations: [
     AllStudentsComponent,
     ViewExamComponent,
-    StudentDetailsComponent
+    StudentDetailsComponent,
+    ChildComponentComponent
   ],
   imports: [
     CommonModule,
@@ -20,4 +22,8 @@ import { StudentDetailsComponent } from './components/student-details/student-de
     NgxPaginationModule
   ]
 })
-export class TeacherModule { }
+export class TeacherModule {
+  constructor() {
+    console.log('TeacherModule :>> ', 123132);
+  }
+}

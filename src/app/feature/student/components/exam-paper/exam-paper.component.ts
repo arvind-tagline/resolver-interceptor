@@ -30,15 +30,19 @@ export class ExamPaperComponent implements OnInit {
     // this.getPaper();
   }
 
+  public confirm(): boolean {
+    return window.confirm('Are you sure you want to exit this exam paper page!');
+  }
+
   private getPaper(){
-    this.spinner.show();
+    // this.spinner.show();
     this.studentService.getPaper(this.examId).subscribe({
       next:(res:any)=>{
         this.examPapers = res.data;
         this.spinner.hide();
       },
       error:(err)=>{
-        this.spinner.hide();
+        // this.spinner.hide();
       }
     })
   }

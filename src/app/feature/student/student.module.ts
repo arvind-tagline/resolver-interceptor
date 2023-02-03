@@ -9,9 +9,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
-  
     AllExamComponent,
-       ExamPaperComponent
+    ExamPaperComponent
   ],
   imports: [
     CommonModule,
@@ -19,4 +18,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgxPaginationModule
   ]
 })
-export class StudentModule { }
+export class StudentModule {
+  constructor() {
+    console.log('123132 :>> ', 123132);
+  }
+ }

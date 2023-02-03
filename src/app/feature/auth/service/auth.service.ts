@@ -20,10 +20,27 @@ export class AuthService {
     return this.http.post(`${environment.baseUrl}users/Login`,data).pipe(tap((res:any)=>{
       this._isLoggedIn$.next(true);
       localStorage.setItem('token', res.data.token);
+      localStorage.setItem('userName', res.data.name);
     }));
   }
 
   get accessToken(){
     return localStorage.getItem('token') || null;
+  }
+
+  get userRole(){
+    if(localStorage.getItem('userRole') === 'teacher'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  get isTeacher(){
+    if(localStorage.getItem('userRole') === 'student'){
+      return true;
+    }else{
+      return false;
+    }
   }
 }

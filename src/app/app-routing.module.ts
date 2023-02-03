@@ -1,17 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './feature/auth/guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./feature/auth/auth.module').then(m => m.AuthModule)
+    loadChildren: () => import('./feature/auth/auth.module').then(m => m.AuthModule),
+    title:'Login'
   },
   {
     path: 'student',
-    loadChildren: () => import('./feature/student/student.module').then(m => m.StudentModule)
+    canLoad:[AuthGuard],
+    loadChildren: () => import('./feature/student/student.module').then(m => m.StudentModule),
+    title:'Student'
   },
   {
     path: 'teacher',
-    loadChildren: () => import('./feature/teacher/teacher.module').then(m => m.TeacherModule)
+    canLoad:[AuthGuard],//Using this guard we can control module route if user is unauthorized then module is not load.
+    // canActivate:[AuthGuard],
+    loadChildren: () => import('./feature/teacher/teacher.module').then(m => m.TeacherModule),
+    title:'Teacher'
   },
   {
     path: '**',

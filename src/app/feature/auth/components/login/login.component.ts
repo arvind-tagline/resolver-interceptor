@@ -40,14 +40,14 @@ export class LoginComponent implements OnInit {
     });
   }
   public onLogin() {
-    this.spinner.show();
+    // this.spinner.show();
     if (this.loginForm.invalid) {
       return
     }
 
     this.authService.login(this.loginForm.value).subscribe({
       next: (res: LoginResponse) => {
-        this.spinner.hide();
+        // this.spinner.hide();
         // localStorage.setItem('token', res.data.token);
         localStorage.setItem('userRole', res.data.role);
         this.sharedService.isAuthenticated$.next(true);

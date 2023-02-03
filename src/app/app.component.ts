@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router, RouterEvent } from '@angular/router';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from './feature/auth/service/auth.service';
 
@@ -25,11 +25,17 @@ export class AppComponent {
   }
 
   public navigationInterceptor(event: RouterEvent): void {
-    if (event instanceof NavigationStart) {
-      this.spinner.show();
-    }
-    if (event instanceof NavigationEnd) {
-      this.spinner.hide();
-    }
+    // if (event instanceof NavigationStart) {
+    //   this.spinner.show();
+    // }
+    // if (event instanceof NavigationEnd) {
+    //   this.spinner.hide();
+    // }
+    // if (event instanceof NavigationCancel) {
+    //   this.spinner.hide();
+    // }
+    // if (event instanceof NavigationError) {
+    //   this.spinner.hide();
+    // }
   }
 }

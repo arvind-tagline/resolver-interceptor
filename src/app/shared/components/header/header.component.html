@@ -6,6 +6,11 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link">Welcome, {{userName}}</a>
+                </li>
+            </ul>
             <ul class="navbar-nav custom-nav">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/login" *ngIf="!(isLogin$ |async)">Login</a>
