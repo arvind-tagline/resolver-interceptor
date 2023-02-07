@@ -43,7 +43,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<c
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return component.confirm();;
+    return component.confirm();
   }
   canLoad(
     route: Route,
