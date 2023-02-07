@@ -1,0 +1,41 @@
+#circle {
+    position: relative;
+    border-radius: 100%;
+    padding: 16px;
+       animation: rotate-animation 8s infinite linear;
+  }
+  
+  #circle span {
+    position: absolute;
+    transform-origin: top left;
+  }
+  
+  @keyframes rotate-animation {
+    from { transform: rotate(0); }
+    to { transform: rotate(-360deg); }
+  }
+  
+  /* Misc. */
+  body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+      font-family: 'Helvetica', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .text-contaniner{
+    height: 50vh;
+    overflow-y: scroll;
+  }
+  .search-input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }

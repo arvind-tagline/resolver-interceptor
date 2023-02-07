@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   get isTeacher(){
-    if(localStorage.getItem('userRole') === 'student'){
+    if(localStorage.getItem('userRole') === 'teacher'){
       return true;
     }else{
       return false;

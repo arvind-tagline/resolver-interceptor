@@ -7,6 +7,8 @@ import { ViewExamComponent } from './components/view-exam/view-exam.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
 import { ChildComponentComponent } from './components/child-component/child-component.component';
+import { DirectivesModule } from 'src/app/shared/directives/directives.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { ChildComponentComponent } from './components/child-component/child-comp
   imports: [
     CommonModule,
     TeacherRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    DirectivesModule,
+    FormsModule
   ]
 })
 export class TeacherModule {

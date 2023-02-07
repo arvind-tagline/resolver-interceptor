@@ -1,1 +1,14 @@
-<p>child-component works!</p>
+<input type="text" appStyle class="form-control">
+<div class="card card-block mt-3" appStyle>
+  <h4 class="card-title">Now when we hover over the card we show the joke and when we move out of the card the punchline
+    is hidden again.</h4>
+  <p class="card-text" [style.display]="'none'">As well as showing the punchline on a mouseover event</p>
+</div>
+<div class='circle' data-text="SEE MORE SEE MORE&nbsp;"></div>
+
+<div class="search-input">
+  <label for="">Search here: </label> <input [(ngModel)]="searchText" type="search" class="form-control" appStyle>
+</div>
+
+<div class="text-contaniner" [innerHtml]="text | search:searchText">
+</div>
